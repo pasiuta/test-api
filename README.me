@@ -1,0 +1,46 @@
+                                        API FOR CREATING USERS
+  What is it?
+  -----------
+  In this API you can create users, users are recording to the database,
+  you can update and receive them. Socket.IO  sends a notification every time when you update user data.
+
+  Installation
+  ------------
+  Before starting, you need install all packages, run for that "npm install"
+  For testing your request you need install postman
+  For testing that your records in database you need install PostgreSQL
+
+  How to use it?
+  -------------
+  1)write in command line command :node app.js
+  2)go to postman
+  3) For create user you need create POST request to this url(http://localhost:8080/api/user/)
+    with data for example:{
+        "first_name":"Admin",
+        "last_name":"AdminAdmin",
+        "email":"admin@gmail.com",
+        "phone":"+380994346688",
+        "password":"admin"
+    }
+   4) For update user you need create PUT request to this url (http://localhost:8080/api/user/)
+        with data for example:
+        IMPORTANT! you need write id of your user which you need to update
+        {
+                "id":1,
+                "first_name":"Admin",
+                "last_name":"AdminAdmin",
+                "email":"admin@gmail.com",
+                "phone":"+380994346688",
+                "password":"admin"
+            }
+   5)   For get user you need create GET request to this url (http://localhost:8080/api/user/1)
+        IMPORTANT! you need write id in parameters in query of your user which you need to get
+
+   6) For login user you need create POST request to this url (http://localhost:8080/api/login)
+        with data for example:
+        IMPORTANT! you need write only email and password for login
+        {
+            "email":"anya@gmail.com",
+            "password":"anya"
+        }
+        after success login you will get JWT token
