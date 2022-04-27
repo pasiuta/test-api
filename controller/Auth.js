@@ -8,7 +8,7 @@ const generateAccessToken = (id) => {
     const payload = {
         id
     }
-    return jwt.sign(payload, secret, {expiresIn:process.env.EXPIRE_TOKEN});
+    return jwt.sign(payload, secret, {expiresIn: process.env.EXPIRE_TOKEN});
 }
 
 class AuthController {

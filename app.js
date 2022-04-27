@@ -11,11 +11,11 @@ const io = require("socket.io")(process.env.SOCKET_PORT, {
 })
 io.on("connection", socket => {
     socket.on("userUpdated", (user) => {
-        console.log('message from socket');
-        console.log(user);
+        console.log('User has been updated:',user);
+
 
     })
 })
 app.use('/api', userRouter);
-app.listen(PORT, () => console.log(`server started on post ${PORT}`))
+app.listen(PORT, () => console.log(`server started on port ${PORT}`))
 
