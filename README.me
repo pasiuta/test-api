@@ -4,43 +4,51 @@
   In this API you can create users, users are recording to the database,
   you can update and receive them. Socket.IO  sends a notification every time when you update user data.
 
-  Installation
-  ------------
-  Before starting, you need install all packages, run for that "npm install"
-  For testing your request you need install postman
-  For testing that your records in database you need install PostgreSQL
+  Prerequisites
+  -------------
+  1. Install npm with command : npm install -g npm
+  2. Go to this project local and run : npm install
+  3. Install node.js : https://nodejs.org/uk/download/
+  4. Install PostgreSQL : https://www.postgresql.org/download/
+  5. Install Postman for testing your requests: https://www.postman.com/downloads/
 
   How to use it?
   -------------
-  1)write in command line command :node app.js
-  2)go to postman
+  1) write in command line command :node app.js
+
+  2) go to postman
+
   3) For create user you need create POST request to this url(http://localhost:8080/api/user/)
-    with data for example:{
+        with data for example : {
+        "first_name":"John",
+        "last_name":"Doe",
+        "email":"johndoe@gmail.com",
+        "phone":"+380695336688",
+        "password":"johndoe1968"
+         }
+
+   4) For update user you need create PUT request to this url (http://localhost:8080/api/user/)
+        IMPORTANT!
+        you need write id of your user which you need to update
+        with data for example : {
+        id":1,
         "first_name":"Admin",
         "last_name":"AdminAdmin",
         "email":"admin@gmail.com",
         "phone":"+380994346688",
-        "password":"admin"
-    }
-   4) For update user you need create PUT request to this url (http://localhost:8080/api/user/)
-        with data for example:
-        IMPORTANT! you need write id of your user which you need to update
-        {
-                "id":1,
-                "first_name":"Admin",
-                "last_name":"AdminAdmin",
-                "email":"admin@gmail.com",
-                "phone":"+380994346688",
-                "password":"admin"
-            }
-   5)   For get user you need create GET request to this url (http://localhost:8080/api/user/1)
-        IMPORTANT! you need write id in parameters in query of your user which you need to get
+         "password":"admin"
+          }
+
+   5) For get user you need create GET request to this url (http://localhost:8080/api/user/1)
+        IMPORTANT!
+        you need write id in parameters in query of your user which you need to get
 
    6) For login user you need create POST request to this url (http://localhost:8080/api/login)
-        with data for example:
-        IMPORTANT! you need write only email and password for login
-        {
-            "email":"anya@gmail.com",
-            "password":"anya"
-        }
+        IMPORTANT!
+        you need write only email and password for login
+        with data for example: {
+        "email":"anya@gmail.com",
+        "password":"anya"
+         }
+
         after success login you will get JWT token
